@@ -147,17 +147,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\bagtestmain.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="main.cpp" />
+    <ClInclude Include="ABag.h" />
+    <ClInclude Include="bagADT.h" />
+    <ClInclude Include="BDictionary.h" />
+    <ClInclude Include="book.h" />
+    <ClInclude Include="dictionaryADT.h" />
+    <ClInclude Include="kvpair.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\bagADT.h" />
-    <ClInclude Include="..\book.h" />
-    <ClInclude Include="..\dictionaryADT.h" />
-    <ClInclude Include="..\kvpair.h" />
-    <ClInclude Include="ABag.h" />
+    <ClCompile Include="bagtestmain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

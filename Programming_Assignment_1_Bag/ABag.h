@@ -4,18 +4,16 @@
 
 	Author: Cameron Burkholder
 	Created on 09/08/2020
-	
 */
 
 #include <memory>			// For using Smart Pointers
-#include "../bagADT.h"		// For inheriting from the ADT
-#include "../kvpair.h"		// For storing templated key-value pairs
+#include "bagADT.h"			// For inheriting from the ADT
 
 const size_t BAG_SIZE = 10;
 
 #pragma once
 template <typename E>
-class ABag : public Bag<E> {
+class ABag : protected Bag<E> {
 private:
 	int maxSize;
 	int top;
@@ -80,10 +78,10 @@ public:
 	// record is not found the function returns false.  Works just like remove()
 	// except that the found record is not removed from the bag.
 	bool find(E& returnValue) const {
-		bool isFound;
-		for (E bagItem : bag) {
-			if (returnValue == bagItem) {
-				returnValue = bagItem;
+		bool isFound = false;
+		for (int i = 0; i < top; i++) {
+			if (bag[i] == returnValue) {
+				returnValue = bag[i];
 				isFound = true;
 				break;
 			}

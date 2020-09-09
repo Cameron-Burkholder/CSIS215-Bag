@@ -13,6 +13,8 @@ public:
   Dictionary() {}          // Default constructor
   virtual ~Dictionary() {} // Base destructor
 
+  /*
+
   // Reinitialize dictionary
   virtual void clear() = 0;
 
@@ -44,6 +46,7 @@ public:
 
   // Return the number of records in the dictionary.
   virtual int size() = 0;
+  */
 };
 
 #endif
