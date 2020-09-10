@@ -127,7 +127,7 @@ int main(int argc, char** argv) {
 	/* Demonstrate any Bag functions that were not used/demonstrated in the implemention 
 	of your BDictionary and ABag using a Bag of KVpairs<int, string>. */
 
-	/*
+	
 	ABag<KVpair<int, string>> myBag; //Used to test bag functions not previously demonstrated
 	std::cout << std::endl;
 	std::cout << "SUITE: ABag.h" << std::endl;
@@ -135,26 +135,39 @@ int main(int argc, char** argv) {
 		KVpair<int, std::string> pair = KVpair<int, std::string >(1, "Cameron Burkholder");
 		ABag<KVpair<int, std::string>> testBag = ABag<KVpair<int, std::string>>(10);
 
+		/*
 		std::cout << "TEST: addItem" << std::endl;
 		std::cout << "\tShould be 1: " << testBag.addItem(pair) << std::endl;
+		*/
 
+		/*
 		std::cout << "TEST: removeTop" << std::endl;
 		KVpair<int, std::string> removedPair;
 		cout << "\tShould be 1: " << testBag.removeTop(removedPair) << std::endl;
 		cout << "\tKey: " << removedPair.key() << std::endl;
 		cout << "\tValue: " << removedPair.value() << std::endl;
+		*/
 
+		/*
 		std::cout << "TEST: emptyBag" << std::endl;
 		testBag.emptyBag();
 		std::cout << "\tShould be 0: " << testBag.inspectTop(pair) << std::endl;
+		*/
 
 		std::cout << "TEST: inspectTop" << std::endl;
-		std::cout << "\tShould be 0: " << testBag.inspectTop(pair) << std::endl;
+		testBag.addItem(pair);
+		KVpair<int, std::string> pair2 = KVpair<int, std::string>(2, "Other name");
+		testBag.addItem(pair2);
+		std::cout << "\tShould be 1: " << testBag.inspectTop(pair) << std::endl;
+		std::cout << "\tShould be Other Name: " << pair.value() << std::endl;
 
+		/*
 		std::cout << "TEST: remove" << std::endl;
 		testBag.addItem(pair);
 		std::cout << "\tShould be 1: " << testBag.remove(pair) << std::endl;
+		*/
 
+		/*
 		std::cout << "TEST: find" << std::endl;
 		testBag.addItem(pair);
 		KVpair<int, std::string> newPair = KVpair<int, std::string>(2, "Caleb");
@@ -162,26 +175,30 @@ int main(int argc, char** argv) {
 		KVpair<int, std::string> keyPair = KVpair<int, std::string>(2, "Undefined");
 		std::cout << "\tShould be 1: " << testBag.find(keyPair) << std::endl;
 		std::cout << "\tShould be 'Caleb': " << keyPair.value() << std::endl;
+		*/
 
+		/*
 		std::cout << "TEST: emptyBag" << std::endl;
 		testBag.emptyBag();
 		std::cout << "\tShould be 0: " << testBag.inspectTop(pair) << std::endl;
+		*/
 
-		std::cout << "TEST: =+" << std::endl;
+		std::cout << "TEST: +=" << std::endl;
 		KVpair<int, std::string> pairThree = KVpair<int, std::string>(3, "Three");
 		testBag += pairThree;
 		std::cout << "\tShould be 1: " << testBag.inspectTop(pair) << std::endl;
 		std::cout << "\tShould be 'Three': " << pair.value() << std::endl;
 
+		/*
 		std::cout << "TEST: size" << std::endl;
 		std::cout << "\tShould be 1: " << testBag.size() << std::endl;
+		*/
 
 		std::cout << "TEST: bagCapacity" << std::endl;
 		std::cout << "\tShould be 10: " << testBag.bagCapacity() << std::endl;
 
 	}
 	std::cout << std::endl;
-	*/
 
 	wait();
 
